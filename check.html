@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Table by JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">1. Allowing the User to Create Their Own Size HTML Table
+                    </a></li>
+                <li><a href="yellow.html">2. Have the cells in the third row shaded (background-color) yellow</a></li>
+                <li><a href="purple.html">3. Have the cells in every odd row shaded purple </a></li>
+                <li><a href="pink.html">4. Have the the topLeft-bottomRight diagonal cells shaded pink</a></li>
+                <li><a class="active" href="check.html">5. the cells from the two diagonals shaded either orange or
+                        chartreuse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Allowing the User to Create Their Own Size HTML Table</h1>
+    <section>
+        <p>
+            How Many Rows Do You Want in the Table?
+            <input type="number" min="0" max="10" id="rows" required>
+        </p>
+
+        <p>
+            How Many Columns Do You Want in the Table?
+            <input type="number" min="0" max="10" id="cols" required>
+        </p>
+
+        <p id="msg"></p>
+
+        <button id="table-btn">Click to Draw the Table</button>
+
+        <hr />
+        <div id="generatedTable"></div>
+    </section>
+
+    <script>
+        const rows = document.getElementById('rows');
+        const cols = document.getElementById('cols');
+        const btn = document.getElementById('table-btn');
+        const table = document.getElementById('generatedTable');
+        const msg = document.getElementById('msg');
+
+        function drawTable(el, rows, cols) {
+            // Table Head: 1 Row & # of cols
+            let head = "";
+            for (let c = 0; c < cols; c++) {
+                // Start HEAD
+                head += `<th> Column ${c + 1}</th>`;
+                // END HEAD
+            }
+
+            // Table Content: # rows * # cols
+            let content = "";
+            for (let r = 0; r < rows; r++) {
+                // Start ROW
+                // the cells from the two diagonals shaded either orange or chartreuse;
+                // with the intersecting cell from the diagonals shaded black;
+                // and its text in white   
+
+                content += "<tr>";
+                for (let c = 0; c < cols; c++) {
+                    // Start CELL
+                    let bg = "";
+
+                    if (r === c) bg = "orange";
+                    // example
+                    // rows 5 cols 10
+                    // (0, 9) (1, 8) (2, 7)
+                    // always r + c = cols - 1 
+                    if (r + c === cols - 1) bg = "green";
+                    if (r === c && r + c === cols - 1) bg = "black";
+
+                    content += `<td class="bg-${bg}">${r + 1}.${c + 1}</td>`;
+                    // END CELL
+                }
+                content += "</tr>";
+                // End ROW
+            }
+
+            el.innerHTML = `<table>${head}${content}</table>`;
+        }
+
+        btn.addEventListener('click', () => {
+            // TODO - Error handling
+            // Case 1. Not number or void input
+            if (!rows.value || !cols.value) {
+                msg.innerText = "Invalid inputs";
+                return;
+            }
+
+            // Case 2. If num is bigger than 15, show alert
+            if (rows.value > 15 || cols.value > 15) {
+                msg.innerText = "Please enter less than 15";
+                return;
+            }
+
+            msg.innerText = "";
+
+            // Draw Table
+            // console.log("inputs", rows, cols);
+            drawTable(table, rows.value, cols.value);
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+/* Typo */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap');
+
+html,
+body {
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+/* Header */
+nav a {
+    color: initial;
+    text-decoration: none;
+    line-height: 1.4;
+
+}
+
+nav a.active {
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+nav ul,
+nav li {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Form */
+button+hr {
+    /* display: none; */
+    margin: 2rem 0rem;
+    opacity: 0.3;
+}
+
+/* Table */
+/* Header */
+#generatedTable th {
+    border: 2px solid red;
+    border-radius: 2px;
+    padding: 4px 9px;
+}
+
+/* Cell */
+#generatedTable td {
+    border: 2px solid blue;
+    border-radius: 2px;
+    padding: 4px 9px;
+    text-align: center;
+}
+
+/* Button */
+button#table-btn {
+    padding: 10px 18px;
+    border-radius: 4px;
+    border: none;
+    background: purple;
+    color: white;
+    font-weight: bold;
+    transition: all ease-out 100ms;
+}
+
+button#table-btn:hover {
+    background: black;
+    box-shadow: 0 4px 1em #00000033;
+}
+
+
+/* Conditional Cell */
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-purple {
+    background: purple;
+    color: white;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-green {
+    background-color: greenyellow;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}

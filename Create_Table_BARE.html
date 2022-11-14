@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+
+	<title>
+
+	</title>
+
+	<style rel="stylesheet" type="text/css">
+		body {
+			background-color: lightblue
+		}
+
+		h1 {
+			text-align: center
+		}
+
+		td {
+			border: 2px blue solid
+		}
+
+		th {
+			border: 3px red solid
+		}
+
+		img {
+			border: 1px solid black
+		}
+
+		#homework {
+			background-color: red;
+			color: yellow;
+			font-size: 20px
+		}
+	</style>
+
+	<script>
+		function drawTable() {
+
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Allowing the User to Create Their Own Size HTML Table</h1>
+
+	<p>
+		Write JavaScript code in the <b>drawTable()</b> function that will create a HTML table. (See &lt;script> tag in
+		the &lt;head>)
+	<ol>
+		<li>The &lt;th> cells should show "Column" followed by the column number.</li>
+		<li>The &lt;td> cells should show the row number followed by a . followed by the column number.</li>
+	</ol>
+
+	<b>Examples:</b>
+	</p>
+
+	<p id="examples"><img src="TableExample1.png"> &nbsp;<img src="TableExample2.png"></p>
+
+	<hr>
+
+	<h3>HINTS:</h3>
+
+	<ol type="a">
+		<li>Think about the problem. <b>DO NOT START CODING YET!</b></li>
+		<li>Think about the problem again. <b>DO NOT START CODING YET!</b></li>
+		<li>Write out your <b>pseudocode</b>. For each line, decide whether it is carried out <b>ONCE</b>,
+			<b>SOMETIMES</b> or <b>LOTS of TIMES</b>.</li>
+		<li>The tags you need to write are&nbsp;&nbsp; &lt;table>&lt;/table>&nbsp;&nbsp; &lt;tr>&lt;/tr>
+			&nbsp;&nbsp;&lt;th>&lt;/th>&nbsp;&nbsp; &lt;td>&lt;/td> . The important thing here is to analyse each tag:
+			do you need to open/close it <b>ONCE</b>, <b>a FEW times</b> <b>a LOT of times</b>?</li>
+		<li>Make sure you are writing the CLOSE tags in the appropriate place.</li>
+		<li>This <a href="https://www.w3schools.com/jsref/prop_text_value.asp" target="_blank">w3schools link</a> will
+			help you get whatever is typed in a textbox</li>
+		<li>If you want to <b>READ</b> the value from a textbox, should it be on the <b>right</b> or <b>left</b> hand
+			side of the <b>=</b> sign?</li>
+		<li>Type the pseudocode as <b>comments</b> for your JavaScript Code.</li>
+	</ol>
+
+	<hr>
+
+	<h3>EXTRA: in all cases, create a copy of this webpage and modify the code:</h3>
+	<ol start="2">
+		<li>Have the cells in the third row shaded (background-color) yellow &nbsp;&nbsp;<img src="TableQ2.png"></li>
+		<li>Have the cells in every odd row shaded purple &nbsp;&nbsp;<img src="TableQ3.png"></li>
+		<li>Have the the topLeft-bottomRight diagonal cells shaded pink &nbsp;&nbsp;<img src="TableQ4.png"></li>
+		<li>Have
+			<ul>
+				<li>the cells from the two diagonals shaded either orange or chartreuse;</li>
+				<li>with the intersecting cell from the diagonals shaded black;</li>
+				<li>and its text in white &nbsp;&nbsp;<img src="TableQ5.png"></li>
+			</ul>
+		</li>
+	</ol>
+
+	<h3>SUBMISSION of Work:</h3>
+	<ol>
+		<li>Create a folder called '<b>js_table</b>'</li>
+		<li>Save your 5 webpages into it (call them 1.html, 2.html, etc</li>
+		<li id="homework">Host on your server space, and email me the link for one of the URLs.</li>
+	</ol>
+
+	<hr>
+
+	<label>How Many Rows Do You Want in the Table?</label>
+	<input type="number" min="1" id="numRows" placeholder="1 or more"> <br><br>
+	<label>How Many Columns Do You Want in the Table?</label>
+	<input type="number" min="1" id="numColumns" placeholder="1 or more"> <br><br>
+
+	<button onclick="drawTable()">Click to Draw the Table</button><br><br>
+
+	<div id="wheretheTableGoes"></div>
+</body>
+
+</html>
